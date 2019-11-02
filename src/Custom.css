@@ -1,3 +1,68 @@
 header{
     background-color: #000 !important;
 }
+
+.body_bg{
+    background-color: #212121 !important;
+    color: #fff;
+}
+.section-top-text{
+    font-size: 16px;
+    margin-bottom: 100px;
+}
+.bold-section{
+    font-size: 24px;
+}
+.top-container{
+    margin-bottom: 50px;
+}
+.override-bg{
+    background-color: unset !important;
+}
+.brand-head{
+    font-weight: bold;
+    margin-top: -2px;
+    color: #f44336;
+}
+.brand-head > span{
+    font-size: 30px;
+}
+
+.navbar-brand{
+    display: flex;
+}
+.custom-outline-component{
+    color: #ccc;
+    border-color: #ccc;
+}
+.custom-outline-component:hover{
+    color: #ccc;
+    border-color: #ccc;
+}
+.body-card{
+    float: right;
+}
+.card-body-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.mini{
+    color: #f44336;
+    font-weight: bold;
+}
+.mini-v{
+    color: #4CAF50;
+    font-weight: bold;
+}
+.head-text{
+    font-weight: bold;
+}
+.top-search{
+    background-color: inherit !important;
+    border-color: #777;
+}
+.top-search:focus{
+    border-color: #f44336 !important;
+    box-shadow: 0 0 0 .1rem #f44336;
+}

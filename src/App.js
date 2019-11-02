@@ -10,7 +10,7 @@ import HeaderComponent from './Components/HeaderComponent';
 function App() {
     return (
         <Provider store={MovieStore}>
-            <div>
+            <div className="body_bg">
                 {/* <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <p>
@@ -25,7 +25,7 @@ function App() {
                     Learn
                     </a>
                 </header> */}
-                <HeaderComponent />
+                <HeaderComponent logo={logo}/>
                 <MovieComponent />
             </div>
         </Provider>
