@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import { fetchReducer } from './fetchReducer'
-import { searchReducer } from './searchReducer'
+import fetchReducer from './fetchReducer'
+import searchReducer from './searchReducer'
 
 const rootReducers = combineReducers({
     fetch : fetchReducer,
