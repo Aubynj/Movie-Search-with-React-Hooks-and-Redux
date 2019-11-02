@@ -4,9 +4,9 @@ import { fetchUpcomingMusic, fetchTvPopularShows } from '../Redux/Actions/action
 import TopSection from './TopSection'
 
 function MovieComponent(props) {
-    
+    const { fetchUpcomingMusic } = props
     useEffect(() => {
-        props.fetchUpcomingMusic()
+        fetchUpcomingMusic()
     }, [])
     
     const upres = useMemo(() => {
@@ -14,7 +14,7 @@ function MovieComponent(props) {
         if (props.upcoming.results !== undefined)
             return (
                 props.upcoming.results.map(res => 
-                    <div className="col-md-4 mb-5" key={res.id}>
+                    <div className="col-md-4 mb-2" key={res.id}>
                         <div className="card override-bg">
                             <img src={imageURL+res.backdrop_path} className="card-img-top" alt="..." />
                             <div className="card-body">
@@ -31,7 +31,7 @@ function MovieComponent(props) {
                     </div>
                 )
             )
-    })
+    },[props])
 
     console.log(props.upcoming.results)
 
@@ -40,6 +40,7 @@ function MovieComponent(props) {
             <TopSection />
             <h2>{ props.upcoming.results ? "Upcoming Movies" : null}</h2><br/>
             <div className="row">
+                { props.fetchLoading ? <div className="text-loader"><div className="lds-ripple"><div></div><div></div></div></div> : null}
                 { upres }
             </div>
         </div>
@@ -49,6 +50,7 @@ function MovieComponent(props) {
 
 const mapStateToProps = state => {
     return {
+        fetchLoading : state.fetch.loadingF,
         upcoming : state.fetch.upcomingMovies
     }
 }
