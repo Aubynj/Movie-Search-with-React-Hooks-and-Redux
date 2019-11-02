@@ -2,7 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+const BASE_URL = process.env.API_KEY;
 function App() {
+    console.log(`Dot env::`, BASE_URL)
     return (
         <div className="App">
             <header className="App-header">
@@ -16,7 +18,7 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 >
-                Learn React
+                Learn
                 </a>
             </header>
         </div>

@@ -1,6 +1,7 @@
 import { FETCH_UPCOMING_MOVIES } from '../Actions/index'
 
 const initialState = {
+    loadingF : true,
     upcomingMovies : [],
     tvShows : []
 }
