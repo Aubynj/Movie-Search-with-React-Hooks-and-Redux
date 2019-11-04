@@ -4,7 +4,7 @@ function HeaderComponent(props) {
     console.log(props)
     return (
         <header className="navbar sticky-top navbar-expand-lg navbar-dark">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="!#">
                 <img src={props.logo} width="40" height="40" className="d-inline-block align-top" alt="" /> 
                 <div  className="brand-head">
                     <span>Movies</span>
