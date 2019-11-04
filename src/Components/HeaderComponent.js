@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
 function HeaderComponent(props) {
     console.log(props)
+    
+    const onSubmit = e => {
+        e.preventDefault()
+        // props.scroll() //Submit on scroll
+        document.getElementById('search-res').scrollIntoView({ behavior: 'smooth' });
+
+        // Search result comes here
+    }
+
     return (
         <header className="navbar sticky-top navbar-expand-lg navbar-dark">
             <a className="navbar-brand" href="!#">
@@ -18,7 +27,7 @@ function HeaderComponent(props) {
                 <ul className="navbar-nav mr-auto">
                    
                 </ul>
-                <form className="form-inline my-2 my-lg-0">
+                <form className="form-inline my-2 my-lg-0" onSubmit={onSubmit}>
                     <input className="form-control mr-sm-2 top-search" type="search" placeholder="Search" aria-label="Search" />
                     <button className="btn custom-outline-component my-2 my-sm-0" type="submit">Search</button>
                 </form>

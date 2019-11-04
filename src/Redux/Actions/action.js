@@ -5,6 +5,7 @@ import { FETCH_UPCOMING_MOVIES_FAILURE } from './types'
 // Place your API_KEY here | Below is a fake key
 const API_KEY = "f99440dca1ba7da268636d1b51c7f4e4"
 const URL = "https://api.themoviedb.org/3/"
+export const imageURL = "https://image.tmdb.org/t/p/w500/"
 
 export const fetchUpcomingMusic = () => (dispatch) => {
     dispatch(initFetch())

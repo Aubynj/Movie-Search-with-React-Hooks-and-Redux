@@ -1,17 +1,17 @@
 import React, { useEffect, useMemo } from 'react'
 import { connect } from 'react-redux'
-import { fetchUpcomingMusic, fetchTvPopularShows } from '../Redux/Actions/action'
+import { fetchUpcomingMusic, fetchTvPopularShows, imageURL } from '../Redux/Actions/action'
 import TopSection from './TopSection'
 
 function MovieComponent(props) {
     const { fetchUpcomingMusic, fetchTvPopularShows } = props
+
     useEffect(() => {
         fetchUpcomingMusic()
         fetchTvPopularShows()
     }, [])
     
     const upres = useMemo(() => {
-        const imageURL = "https://image.tmdb.org/t/p/w500/"
         if (props.upcoming.results !== undefined)
             return (
                 props.upcoming.results.map(res => 
@@ -35,7 +35,6 @@ function MovieComponent(props) {
     },[props])
 
     const popul = useMemo(() => {
-        const imageURL = "https://image.tmdb.org/t/p/w500/"
         if (props.popular.results !== undefined)
             return (
                 props.popular.results.map(res => 
@@ -58,8 +57,6 @@ function MovieComponent(props) {
             )
     },[props])
     
-    console.log(props.popular)
-
     return (
         <div className="container-fluid">
             <TopSection />
@@ -72,6 +69,9 @@ function MovieComponent(props) {
             { props.popular.results && <div><h2>Popular TV Shows</h2><br/></div>}
             <div className="row">
                 { popul }
+            </div>
+            <div ref={props.customref} className="row" id="search-res">
+
             </div>
         </div>
     )
