@@ -3,7 +3,7 @@ import {  FETCH_POPULAR_TV_SHOW_SUCCESS, FETCH_POPULAR_TV_SHOW_FAILURE, INIT_FET
 const initialState = {
     loadingT : true,
     tvShows : [],
-    error : ''
+    error : null
 }
 
 const tvShowReducer = (state= initialState, action) => {
@@ -18,7 +18,7 @@ const tvShowReducer = (state= initialState, action) => {
                 ...state,
                 loadingT : false,
                 tvShows : action.payload,
-                error : ''
+                error : null
             }
         case FETCH_POPULAR_TV_SHOW_FAILURE:
             return {

@@ -1,9 +1,9 @@
-import { FETCH_UPCOMING_MOVIES, INIT_FETCH } from '../Actions/index'
+import { FETCH_UPCOMING_MOVIES, FETCH_UPCOMING_MOVIES_FAILURE, INIT_FETCH } from '../Actions/index'
 
 const initialState = {
     loadingF : true,
     upcomingMovies : [],
-    tvShows : []
+    error : null
 }
 
 const fetchReducer = (state= initialState, action) => {
@@ -17,7 +17,15 @@ const fetchReducer = (state= initialState, action) => {
             return {
                 ...state,
                 loadingF : false,
-                upcomingMovies : action.payload
+                upcomingMovies : action.payload,
+                error : null
+            }
+        case FETCH_UPCOMING_MOVIES_FAILURE:
+            return {
+                ...state,
+                loadingF : false,
+                upcomingMovies : [],
+                error : action.payload
             }
         default:
             return state
