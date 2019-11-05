@@ -16,10 +16,8 @@ function App() {
     return (
         <Provider store={MovieStore}>
             <div className="body_bg">
-                
                 <HeaderComponent logo={logo}/>
                 <MovieComponent />
-                
             </div>
         </Provider>
     );

@@ -1,14 +1,12 @@
 import React, { useCallback } from 'react'
 
-function HeaderComponent(props) {
-    console.log(props)
-    
+function HeaderComponent(props) {    
     const onSubmit = e => {
         e.preventDefault()
-        // props.scroll() //Submit on scroll
         document.getElementById('search-res').scrollIntoView({ behavior: 'smooth' });
 
         // Search result comes here
+        
     }
 
     return (

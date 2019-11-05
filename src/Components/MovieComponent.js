@@ -70,7 +70,7 @@ function MovieComponent(props) {
             <div className="row">
                 { popul }
             </div>
-            <div ref={props.customref} className="row" id="search-res">
+            <div className="row" id="search-res">
 
             </div>
         </div>
