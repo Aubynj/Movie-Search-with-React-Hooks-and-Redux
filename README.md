@@ -1,4 +1,4 @@
-![alt text](https://github.com/Aubynj/Socket.io-ChatApp/blob/master/public/img/image1.png)
+![alt text](https://github.com/Aubynj/Movie-Search-with-React-Hooks-and-Redux/blob/master/public/screen.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
