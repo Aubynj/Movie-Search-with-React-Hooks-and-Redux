@@ -10,6 +10,7 @@ const initialState = {
 const searchReducer = (state = initialState, action) => {
     switch(action.type) {
         case INIT_SEARCH:
+            console.log("Loading...")
             return {
                 ...state,
                 loadingS : true

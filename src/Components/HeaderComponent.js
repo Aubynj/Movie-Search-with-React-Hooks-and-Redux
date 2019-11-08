@@ -1,12 +1,22 @@
-import React, { useCallback } from 'react'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
+import { makeMovieSearch } from '../Redux/Actions/action'
 
 function HeaderComponent(props) {    
+    const [searchInput , setSearctInput ] = useState('')
+
+
     const onSubmit = e => {
         e.preventDefault()
-        document.getElementById('search-res').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() =>
+        document.getElementById('search-res').scrollIntoView({ behavior: 'smooth' })
+        ,500)
+        props.makeMovieSearch(searchInput)   
+    }
 
-        // Search result comes here
-        
+    const setNewState = e => {
+        let {name, value} = e.target
+        setSearctInput(name = value)
     }
 
     return (
@@ -26,7 +36,7 @@ function HeaderComponent(props) {
                    
                 </ul>
                 <form className="form-inline my-2 my-lg-0" onSubmit={onSubmit}>
-                    <input className="form-control mr-sm-2 top-search" type="search" placeholder="Search" aria-label="Search" />
+                    <input className="form-control mr-sm-2 top-search" value={searchInput} name="searchInput" type="search" placeholder="Search" onChange={setNewState} required/>
                     <button className="btn custom-outline-component my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
@@ -34,4 +44,4 @@ function HeaderComponent(props) {
     )
 }
 
-export default HeaderComponent
+export default connect(null, { makeMovieSearch })(HeaderComponent)
